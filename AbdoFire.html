@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fire Alarm</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .fire-alarm-button {
+      width: 150px;
+      height: 150px;
+      background-color: red;
+      border: 5px solid #900;
+      border-radius: 50%;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 140px;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.1s ease-in-out;
+    }
+    .fire-alarm-button:active {
+      transform: scale(0.95);
+      background-color: #cc0000;
+    }
+  </style>
+</head>
+<body>
+  <h1>Abdo Fire SIM</h1>
+  <div class="fire-alarm-button" id="fireAlarmButton">Press here nigga</div>
+  <audio id="fireAlarmSound" src="fire-alarm.mp3"></audio>
+
+  <script>
+    const fireAlarmButton = document.getElementById('fireAlarmButton');
+    const fireAlarmSound = document.getElementById('fireAlarmSound');
+
+    fireAlarmButton.addEventListener('click', () => {
+      fireAlarmSound.currentTime = 0; // Reset sound to the beginning
+      fireAlarmSound.play();
+    });
+  </script>
+</body>
+</html>
